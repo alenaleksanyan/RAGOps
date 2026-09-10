@@ -53,10 +53,10 @@ RAG-Bench/
 │   │   ├── app/
 │   │   │   ├── analytics/      # Analytics, Leaderboard & Failure Analysis
 │   │   │   ├── benchmarks/     # In-page Benchmark & Human Labeling Studio
-│   │   │   ├── compare/        # Side-by-side Run Diff Viewer
+│   │   │   ├── compare/        # Multi-Pipeline Radar & Side-by-side Diff Viewer
 │   │   │   ├── documents/      # Document Ingestion & Chunk Preview
 │   │   │   ├── experiments/    # Experiment Run History & Details
-│   │   │   ├── matrix/         # Combinatorial Matrix Builder
+│   │   │   ├── matrix/         # Unified Combinatorial Matrix & 2D Pareto Heatmap
 │   │   │   ├── playground/     # Real-Time RAG Agent Chat Playground
 │   │   │   └── settings/       # Model library & API keys configuration
 │   │   ├── components/         # Shared UI components (Charts, Modals, Markdown)
@@ -95,11 +95,13 @@ RAG-Bench/
   - **Judge Reliability Classification**: Categorized into *High Reliability*, *Moderate Agreement*, or *Needs Review*.
   - **Per-Question Justifications**: Detailed reasoning logs explaining why the judge assigned specific scores.
 
-### Module 4: Dynamic Experimentation Matrix Builder (`/matrix`)
+### Module 4: Unified Experimentation Matrix & Pareto Frontier Hub (`/matrix`)
 - Generates a combinatorial execution grid:
   $$\text{Strategies} \times \text{Embedding Models} \times k\text{-NN Values} \times \text{Distance Metrics} \times \text{Rerankers} \times \text{LLM Models}$$
 - Arbitrary $k$ selection (integer input + preset tags $k=1,3,5,8,10,15,20$).
 - Pre-flight validation ensuring local Ollama models are pulled before launching runs.
+- **Active Sweep Progress Banner**: Real-time progress bar tracking execution percentage, completed runs count, and current status during active sweeps.
+- **2D Pareto Frontier Heatmap**: Visualizes quality vs. latency/cost trade-offs across all completed configurations, identifies non-dominated Pareto-optimal pipelines, and allows 1-click drilldown into detailed run telemetry.
 
 ### Module 5: Interactive RAG Agent Playground (`/playground`)
 - **3 Execution Modes**:
@@ -113,11 +115,12 @@ RAG-Bench/
   - Latency Waterfall Gantt chart (Embedding, Vector Search, Reranking, TTFT, Total).
   - 2D Vector Space PCA coordinate projection.
 
-### Module 6: Comparative Analytics & Failure Analysis (`/analytics` & `/compare`)
-- Configuration leaderboard sorting by composite score, latency, and cost.
-- Cost vs. Accuracy and Latency vs. Precision scatter plots.
-- Side-by-side run diff viewer comparing parameter differences and generated responses.
-- Root-cause failure analysis identifying hallucinations, context starvation, and noise distractors.
+### Module 6: Comparative Analytics, Multi-Pipeline Radar & Failure Analysis (`/analytics` & `/compare`)
+- **Multi-Pipeline Radar Comparison**: Select up to 4 configurations simultaneously and evaluate their performance footprint on an interactive 6-axis Radar chart (Precision, Recall, Faithfulness, Relevance, Latency, Cost).
+- **Configuration Leaderboard**: Sort and rank all matrix configurations by composite score, faithfulness, recall, precision, latency, and cost.
+- **Metric Delta Highlighting**: Color-coded green/red percentage deltas against baseline configurations to instantly identify regressions or gains.
+- **Side-by-Side Run Diff Viewer**: Inspect parameter differences, retrieved contexts, and generated responses.
+- **Diagnostic Autopsy**: Root-cause failure analysis automatically identifying hallucinations, context starvation, and noise distractors.
 
 ---
 
