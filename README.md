@@ -209,23 +209,40 @@ RAGOps evaluates systems across the foundational **RAG Triad**:
 
 ### 1. Context Precision
 Measures whether the relevant chunks are ranked at the top of the context window:
-$$\text{Context Precision@k} = \frac{\sum_{i=1}^k \text{Precision@i} \times \text{IsRelevant}(i)}{\text{Total Relevant Chunks in Top } k}$$
+
+$$
+\text{Context Precision@k} = \frac{\sum_{i=1}^k \text{Precision@i} \times \text{IsRelevant}(i)}{\text{Total Relevant Chunks in Top } k}
+$$
 
 ### 2. Context Recall
 Measures whether all factual claims in the ground-truth answer are present in the retrieved chunks:
-$$\text{Context Recall} = \frac{|\text{Ground-Truth Sentences Supported by Context}|}{|\text{Total Sentences in Ground Truth}|}$$
+
+$$
+\text{Context Recall} = \frac{|\text{Ground-Truth Sentences Supported by Context}|}{|\text{Total Sentences in Ground Truth}|}
+$$
 
 ### 3. Faithfulness (Hallucination Index)
 Measures whether every claim in the generated answer can be strictly deduced from the retrieved context:
-$$\text{Faithfulness} = \frac{|\text{Claims Verified by Context}|}{|\text{Total Claims Made in Generated Response}|}$$
+
+$$
+\text{Faithfulness} = \frac{|\text{Claims Verified by Context}|}{|\text{Total Claims Made in Generated Response}|}
+$$
 
 ### 4. Answer Relevance
 Measures whether the generated answer directly addresses the user's inquiry without extraneous tangent information:
-$$\text{Answer Relevance} = \text{CosineSimilarity}(\mathbf{e}_{\text{question}}, \mathbf{e}_{\text{answer}})$$
+
+$$
+\text{Answer Relevance} = \frac{\mathbf{e}_q \cdot \mathbf{e}_a}{\|\mathbf{e}_q\| \|\mathbf{e}_a\|}
+$$
+
+*(where $\mathbf{e}_q$ and $\mathbf{e}_a$ are the query and response embeddings)*
 
 ### 5. Reciprocal Rank Fusion (RRF) for Hybrid Search
 Combines dense vector ranks and sparse BM25 ranks without score normalization:
-$$\text{RRF\_Score}(d) = \sum_{m \in \{\text{Dense}, \text{BM25}\}} \frac{1}{60 + \text{rank}_m(d)}$$
+
+$$
+\text{RRF}(d) = \sum_{m \in \{\text{Dense}, \text{BM25}\}} \frac{1}{60 + \text{rank}_m(d)}
+$$
 
 ---
 

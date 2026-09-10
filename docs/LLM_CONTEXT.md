@@ -136,7 +136,7 @@ RAGOps/
    $$\text{Faithfulness} = \frac{|\text{Generated Claims Verified by Context}|}{|\text{Total Generated Claims}|}$$
 
 4. **Answer Relevance**:
-   $$\text{Answer Relevance} = \text{CosineSimilarity}(\mathbf{e}_{\text{question}}, \mathbf{e}_{\text{answer}})$$
+   $$\text{Answer Relevance} = \frac{\mathbf{e}_q \cdot \mathbf{e}_a}{\|\mathbf{e}_q\| \|\mathbf{e}_a\|}$$
 
 5. **Reciprocal Rank Fusion (RRF)**:
-   $$\text{RRF\_Score}(d) = \sum_{m \in \{\text{Dense}, \text{BM25}\}} \frac{1}{60 + \text{rank}_m(d)}$$
+   $$\text{RRF}(d) = \sum_{m \in \{\text{Dense}, \text{BM25}\}} \frac{1}{60 + \text{rank}_m(d)}$$

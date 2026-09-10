@@ -57,27 +57,35 @@ $$\text{Faithfulness} = \frac{|\text{Atomic Claims in Response Directly Grounded
 ### 4. Answer Relevance
 Measures whether the generated response directly answers the user's question without extraneous fluff or tangents:
 
-$$\text{Answer Relevance} = \frac{\mathbf{e}_{\text{question}} \cdot \mathbf{e}_{\text{answer}}}{\|\mathbf{e}_{\text{question}}\| \|\mathbf{e}_{\text{answer}}\|}$$
+$$
+\text{Answer Relevance} = \frac{\mathbf{e}_q \cdot \mathbf{e}_a}{\|\mathbf{e}_q\| \|\mathbf{e}_a\|}
+$$
 
-Where $\mathbf{e}_{\text{question}}$ and $\mathbf{e}_{\text{answer}}$ are neural sentence embedding vectors.
+Where $\mathbf{e}_q$ and $\mathbf{e}_a$ are the neural sentence embedding vectors for the question and generated answer.
 
 ---
 
 ### 5. Context Utilization Rate
 Measures what percentage of the context tokens fed to the LLM were actually cited or used in the final answer:
 
-$$\text{Context Utilization Rate} = \frac{\text{Tokens in Context Cited by Answer}}{\text{Total Tokens in Context Window}}$$
+$$
+\text{Context Utilization Rate} = \frac{\text{Tokens in Context Cited by Answer}}{\text{Total Tokens in Context Window}}
+$$
 
 ---
 
 ### 6. Context Noise Ratio
 Measures the proportion of distractor or irrelevant chunks included in the context window:
 
-$$\text{Context Noise Ratio} = \frac{|\{c \in \text{Retrieved Chunks} \mid \text{Similarity}(c, q) < \tau\}|}{k}$$
+$$
+\text{Context Noise Ratio} = \frac{|\{c \in \text{Retrieved Chunks} \mid \text{Similarity}(c, q) < \tau\}|}{k}
+$$
 
 ---
 
 ### 7. Reciprocal Rank Fusion (RRF) for Hybrid Search
 Combines dense vector similarity rankings and sparse BM25 keyword rankings:
 
-$$\text{RRF\_Score}(d) = \sum_{m \in \{\text{Dense}, \text{BM25}\}} \frac{1}{60 + \text{rank}_m(d)}$$
+$$
+\text{RRF}(d) = \sum_{m \in \{\text{Dense}, \text{BM25}\}} \frac{1}{60 + \text{rank}_m(d)}
+$$
