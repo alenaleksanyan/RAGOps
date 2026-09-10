@@ -1,0 +1,101 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragbench-backend"
+version = "0.1.0"
+description = "RAG Evaluation & Experimentation Workbench – FastAPI Backend"
+requires-python = ">=3.11"
+dependencies = [
+    # --- Web Framework ---
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "python-multipart>=0.0.9",          # multipart file uploads
+
+    # --- Configuration ---
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "python-dotenv>=1.0.0",
+
+    # --- Database & ORM ---
+    "sqlalchemy>=2.0.30",
+    "asyncpg>=0.29.0",
+    "alembic>=1.13.0",
+    "pgvector>=0.3.3",                  # pgvector SQLAlchemy integration
+
+    # --- Auth & Security ---
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+
+    # --- Task Queue ---
+    "arq>=0.26.0",
+    "redis>=5.0.0",
+
+    # --- LangChain Core & Ecosystem ---
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-community>=0.3.0",
+    "langchain-text-splitters>=0.3.0",
+    "langchain-postgres>=0.0.12",       # pgvector vector store integration
+
+    # --- LangGraph ---
+    "langgraph>=0.2.0",
+
+    # --- LLM & Embedding Provider Packages ---
+    "langchain-openai>=0.2.0",
+    "langchain-anthropic>=0.2.0",
+    "langchain-google-genai>=2.0.0",
+    "langchain-groq>=0.2.0",
+    "langchain-mistralai>=0.2.0",
+    "langchain-ollama>=0.2.0",
+    "langchain-huggingface>=0.1.0",
+    "fastembed>=0.3.6",                 # FastEmbed for local zero-dependency embeddings
+
+    # --- Document Parsing ---
+    "unstructured[pdf,docx,pptx]>=0.15.0",
+    "docling>=2.0.0",
+    "pypdf>=4.3.0",
+    "docx2txt>=0.8",
+    "python-magic>=0.4.27",
+
+    # --- RAG Evaluation Frameworks ---
+    "ragas>=0.2.0",
+
+    # --- Cross-Encoder Reranker ---
+    "sentence-transformers>=3.1.0",
+    "cross-encoders>=0.0.1",
+
+    # --- Utilities ---
+    "httpx>=0.27.0",
+    "tenacity>=8.4.0",
+    "tiktoken>=0.7.0",                  # Token counting for OpenAI
+    "orjson>=3.10.0",
+    "aiofiles>=24.1.0",
+    "structlog>=24.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=5.0.0",
+    "httpx>=0.27.0",
+    "ruff>=0.5.0",
+    "mypy>=1.10.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
