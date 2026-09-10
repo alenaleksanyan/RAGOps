@@ -45,7 +45,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="RAG-Bench API",
+    title="RAGOps API",
     description="RAG Evaluation & Experimentation Workbench – Asynchronous LLMOps developer platform",
     version="0.1.0",
     lifespan=lifespan,

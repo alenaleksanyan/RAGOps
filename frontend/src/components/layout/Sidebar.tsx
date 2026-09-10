@@ -42,7 +42,7 @@ export function Sidebar() {
           </div>
           <div className="min-w-0">
             <h1 className="font-bold text-sm tracking-tight text-white flex items-center gap-1.5 truncate">
-              RAG-Bench <span className="text-[9px] uppercase font-semibold px-1 py-0.2 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">v0.1</span>
+              RAGOps <span className="text-[9px] uppercase font-semibold px-1 py-0.2 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">v0.1</span>
             </h1>
             <p className="text-[10px] text-slate-400 truncate">LLMOps Experimentation</p>
           </div>

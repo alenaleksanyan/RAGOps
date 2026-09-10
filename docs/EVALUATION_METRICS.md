@@ -1,6 +1,6 @@
 # 📐 Evaluation Metrics & Mathematical Formulations
 
-This document provides mathematical definitions, algorithms, and interpretation guidelines for all evaluation metrics calculated in **RAG-Bench**.
+This document provides mathematical definitions, algorithms, and interpretation guidelines for all evaluation metrics calculated in **RAGOps**.
 
 ---
 

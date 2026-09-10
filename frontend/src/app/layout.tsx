@@ -7,8 +7,8 @@ import { Sidebar } from "@/components/layout/Sidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RAG-Bench – RAG Evaluation & Experimentation Workbench",
-  description: "Asynchronous LLMOps developer platform for RAG matrix experimentation, synthetic test generation, and side-by-side metric analytics.",
+  title: "RAGOps – RAG Evaluation & Experimentation Workbench",
+  description: "Enterprise LLMOps Evaluation & Optimization Workbench for Retrieval-Augmented Generation",
 };
 
 export default function RootLayout({

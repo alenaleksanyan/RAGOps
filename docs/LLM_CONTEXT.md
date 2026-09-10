@@ -1,4 +1,4 @@
-# 🧠 RAG-Bench: Master Context Document for AI Models & Developers
+# 🧠 RAGOps: Master Context Document for AI Models & Developers
 
 > **How to use this document**: Copy and paste the entire contents of this file into any LLM (ChatGPT, Claude 3.5, Gemini 1.5 Pro, DeepSeek, etc.) at the start of a prompt or session. It gives the AI an instantaneous, 360-degree understanding of the codebase architecture, design patterns, data schemas, mathematical metrics, and implemented features.
 
@@ -6,7 +6,7 @@
 
 ## 1. Executive Summary & Project Profile
 
-**RAG-Bench** is an open-source, full-stack LLMOps and RAG evaluation platform designed to eliminate guesswork from Retrieval-Augmented Generation engineering. It allows developers to:
+**RAGOps** is an open-source, full-stack LLMOps and RAG evaluation platform designed to eliminate guesswork from Retrieval-Augmented Generation engineering. It allows developers to:
 1. Ingest multi-format domain documents (PDF, DOCX, TXT, MD) and evaluate 4 distinct chunking strategies side-by-side.
 2. Execute asynchronous combinatorial evaluation matrixes ($C \times E \times K \times D \times R \times L$) on a distributed LangGraph + Redis ARQ worker pipeline.
 3. Import custom JSON/CSV datasets and curate human gold standards using an in-page labeling studio.
@@ -32,7 +32,7 @@
 
 ### Directory Layout
 ```
-RAG-Bench/
+RAGOps/
 ├── backend/
 │   ├── app/
 │   │   ├── api/v1/             # REST Endpoints (documents, datasets, matrix, chat, providers)

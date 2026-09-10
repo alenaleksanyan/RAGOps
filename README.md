@@ -1,4 +1,4 @@
-# 🚀 RAG-Bench: Enterprise-Grade RAG Evaluation & Experimentation Workbench
+# 🚀 RAGOps: Enterprise-Grade RAG Evaluation & Experimentation Workbench
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-indigo.svg)](https://opensource.org/licenses/MIT)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.111.0-009688.svg?logo=fastapi)](https://fastapi.tiangolo.com)
@@ -7,7 +7,7 @@
 [![LangGraph](https://img.shields.io/badge/LangGraph-StateGraph-orange.svg)](https://langchain-ai.github.io/langgraph/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg?logo=docker)](https://www.docker.com/)
 
-**RAG-Bench** is a comprehensive, open-source developer platform and LLMOps evaluation workbench built to eliminate guesswork from Retrieval-Augmented Generation (RAG) engineering.
+**RAGOps** is a comprehensive, open-source developer platform and LLMOps evaluation workbench built to eliminate guesswork from Retrieval-Augmented Generation (RAG) engineering.
 
 It provides a unified testing ground to ingest domain documents, design multi-dimensional parameter matrixes, curate human gold-standard benchmarks, meta-evaluate automated LLM judges, test iterative multi-step Agentic RAG in real-time, and run deep failure analysis on hallucinations, latency, and costs.
 
@@ -188,8 +188,8 @@ Test, debug, and converse with your RAG pipeline in real-time with live SSE toke
 ---
 
 ## 📐 RAG Triad & Evaluation Metrics Explained
-
-RAG-Bench evaluates systems across the foundational **RAG Triad**:
+ 
+RAGOps evaluates systems across the foundational **RAG Triad**:
 
 ```
                        ┌─────────────────────────────────────┐
@@ -235,8 +235,8 @@ The fastest way to run the entire stack (Frontend, Backend, PostgreSQL pgvector,
 
 ### 1. Clone & Configure Environment
 ```bash
-git clone https://github.com/your-username/rag-bench.git
-cd rag-bench
+git clone https://github.com/alenaleksanyan/RAGOps.git
+cd RAGOps
 cp .env.example .env
 ```
 
@@ -336,7 +336,7 @@ Visit **[http://localhost:3000](http://localhost:3000)** in your browser.
 ## 📂 Project Directory Structure
 
 ```
-RAG-Bench/
+RAGOps/
 ├── backend/
 │   ├── app/
 │   │   ├── api/v1/             # REST Endpoints (documents, datasets, matrix, chat, providers)

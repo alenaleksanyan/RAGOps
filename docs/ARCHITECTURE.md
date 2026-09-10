@@ -1,6 +1,6 @@
 # 🏛 System Architecture & Data Flow
 
-This document details the internal architecture, database schema, background worker pipeline, and streaming protocol of **RAG-Bench**.
+This document details the internal architecture, database schema, background worker pipeline, and streaming protocol of **RAGOps**.
 
 ---
 

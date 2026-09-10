@@ -6,7 +6,7 @@ This document explains the autonomous decision-making engine, query planning, it
 
 ## 1. Agentic Architecture Overview
 
-Traditional RAG executes a single vector retrieval call before generating an answer. In contrast, **RAG-Bench Agentic Mode** operates as an autonomous ReAct loop:
+Traditional RAG executes a single vector retrieval call before generating an answer. In contrast, **RAGOps Agentic Mode** operates as an autonomous ReAct loop:
 
 ```
                             ┌────────────────────────────────────────┐
