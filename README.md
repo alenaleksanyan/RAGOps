@@ -392,7 +392,7 @@ RAGOps/
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/rag-bench/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/alenaleksanyan/RAGOps/issues).
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
